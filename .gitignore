@@ -2,6 +2,8 @@
 
 .DS_Store
 */**/.DS_Store
+._PCB
+*/**/._PCB
 
 # for Vim
 *~
