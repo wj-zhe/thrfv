@@ -2347,7 +2347,7 @@
     (property "Value" "ProMicro" (id 1) (at 102.108 54.102 0)
       (effects (font (size 1.524 1.524)))
     )
-    (property "Footprint" "jw_custom_footprint:ProMicro_jumper_pad_only" (id 2) (at 102.108 58.674 0)
+    (property "Footprint" "jw_custom_footprint:ProMicro_jumper_pad_only_zigzag" (id 2) (at 102.108 58.674 0)
       (effects (font (size 1.524 1.524)) hide)
     )
     (property "Datasheet" "" (id 3) (at 104.648 62.992 0)
@@ -3375,7 +3375,7 @@
     (uuid 34e04860-0169-4bbd-8058-25fde9672465)
     (property "Reference" "SW17" (id 0) (at 186.436 83.693 0))
     (property "Value" "SW_Contact_Pad" (id 1) (at 188.087 86.741 0))
-    (property "Footprint" "jw_custom_footprint:contact_button_pad_planet_5mm_dual_side" (id 2) (at 191.516 83.312 0)
+    (property "Footprint" "jw_custom_footprint:contact_button_pad_half_circle_3mm" (id 2) (at 191.516 83.312 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (id 3) (at 191.516 83.312 0)
@@ -3892,7 +3892,7 @@
     (uuid ddf50807-8c6e-4139-bb13-aa0ef1274689)
     (property "Reference" "SW16" (id 0) (at 165.735 83.947 0))
     (property "Value" "SW_Contact_Pad" (id 1) (at 167.64 86.741 0))
-    (property "Footprint" "jw_custom_footprint:contact_button_pad_death_star_5mm_dual_side" (id 2) (at 171.069 83.312 0)
+    (property "Footprint" "jw_custom_footprint:contact_button_pad_half_circle_3mm" (id 2) (at 171.069 83.312 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (id 3) (at 171.069 83.312 0)
@@ -4322,10 +4322,10 @@
       (reference "SW15") (unit 1) (value "SW15") (footprint "jw_custom_footprint:CherryMX_Hotswap")
     )
     (path "/ddf50807-8c6e-4139-bb13-aa0ef1274689"
-      (reference "SW16") (unit 1) (value "SW_Contact_Pad") (footprint "jw_custom_footprint:contact_button_pad_death_star_5mm_dual_side")
+      (reference "SW16") (unit 1) (value "SW_Contact_Pad") (footprint "jw_custom_footprint:contact_button_pad_half_circle_3mm")
     )
     (path "/34e04860-0169-4bbd-8058-25fde9672465"
-      (reference "SW17") (unit 1) (value "SW_Contact_Pad") (footprint "jw_custom_footprint:contact_button_pad_planet_5mm_dual_side")
+      (reference "SW17") (unit 1) (value "SW_Contact_Pad") (footprint "jw_custom_footprint:contact_button_pad_half_circle_3mm")
     )
     (path "/c6a23e69-6689-4411-b957-a6d23f8db0db"
       (reference "SW18") (unit 1) (value "SW18") (footprint "jw_custom_footprint:CherryMX_Hotswap")
@@ -4352,7 +4352,7 @@
       (reference "TH5") (unit 1) (value "HOLE") (footprint "MountingHole:MountingHole_3.2mm_M3")
     )
     (path "/00000000-0000-0000-0000-00005b722440"
-      (reference "U1") (unit 1) (value "ProMicro") (footprint "jw_custom_footprint:ProMicro_jumper_pad_only")
+      (reference "U1") (unit 1) (value "ProMicro") (footprint "jw_custom_footprint:ProMicro_jumper_pad_only_zigzag")
     )
   )
 )
