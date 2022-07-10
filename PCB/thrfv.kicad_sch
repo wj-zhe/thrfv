@@ -2347,7 +2347,7 @@
     (property "Value" "ProMicro" (id 1) (at 102.108 54.102 0)
       (effects (font (size 1.524 1.524)))
     )
-    (property "Footprint" "jw_custom_footprint:ProMicro_jumper_pad_only_zigzag" (id 2) (at 102.108 58.674 0)
+    (property "Footprint" "jw_custom_footprint:ProMicro_jumper_pad_only" (id 2) (at 102.108 58.674 0)
       (effects (font (size 1.524 1.524)) hide)
     )
     (property "Datasheet" "" (id 3) (at 104.648 62.992 0)
@@ -4352,7 +4352,7 @@
       (reference "TH5") (unit 1) (value "HOLE") (footprint "MountingHole:MountingHole_3.2mm_M3")
     )
     (path "/00000000-0000-0000-0000-00005b722440"
-      (reference "U1") (unit 1) (value "ProMicro") (footprint "jw_custom_footprint:ProMicro_jumper_pad_only_zigzag")
+      (reference "U1") (unit 1) (value "ProMicro") (footprint "jw_custom_footprint:ProMicro_jumper_pad_only")
     )
   )
 )
