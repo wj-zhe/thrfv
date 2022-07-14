@@ -3322,7 +3322,7 @@
     (property "Value" "Conn_01x05_Female" (id 1) (at 229.997 114.935 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Footprint" "jw_custom_footprint:Molex_200528-0050_1x05-1MP_P0.5mm_Horizontal" (id 2) (at 238.76 121.92 0)
+    (property "Footprint" "Connector_FFC-FPC:TE_0-1734839-5_1x05-1MP_P0.5mm_Horizontal" (id 2) (at 238.76 121.92 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (id 3) (at 238.76 121.92 0)
@@ -3344,7 +3344,7 @@
     (property "Value" "Conn_01x05_Female" (id 1) (at 222.123 114.935 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Footprint" "jw_custom_footprint:Molex_200528-0050_1x05-1MP_P0.5mm_Horizontal" (id 2) (at 213.36 121.92 0)
+    (property "Footprint" "Connector_FFC-FPC:TE_0-1734839-5_1x05-1MP_P0.5mm_Horizontal" (id 2) (at 213.36 121.92 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (id 3) (at 213.36 121.92 0)
@@ -4184,10 +4184,10 @@
       (reference "J2") (unit 1) (value "OLED") (footprint "SofleKeyboard-footprint:OLED_4Pin")
     )
     (path "/33de51e4-f43b-45b1-833b-e21d84d90255"
-      (reference "J3") (unit 1) (value "Conn_01x05_Female") (footprint "jw_custom_footprint:Molex_200528-0050_1x05-1MP_P0.5mm_Horizontal")
+      (reference "J3") (unit 1) (value "Conn_01x05_Female") (footprint "Connector_FFC-FPC:TE_0-1734839-5_1x05-1MP_P0.5mm_Horizontal")
     )
     (path "/2eec7e7a-4330-4f6e-9016-3a7281b4315e"
-      (reference "J4") (unit 1) (value "Conn_01x05_Female") (footprint "jw_custom_footprint:Molex_200528-0050_1x05-1MP_P0.5mm_Horizontal")
+      (reference "J4") (unit 1) (value "Conn_01x05_Female") (footprint "Connector_FFC-FPC:TE_0-1734839-5_1x05-1MP_P0.5mm_Horizontal")
     )
     (path "/00000000-0000-0000-0000-00005b913c11"
       (reference "JP1") (unit 1) (value "JP1") (footprint "Jumper:SolderJumper-2_P1.3mm_Open_RoundedPad1.0x1.5mm")
