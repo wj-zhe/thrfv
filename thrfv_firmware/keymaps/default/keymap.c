@@ -3,7 +3,7 @@
 #include QMK_KEYBOARD_H
 
 #ifdef ENCODER_ENABLE
-#   include "encoder.h"
+#   include "encoder_thrfv.h"
 #endif
 
 // A 'transparent' key code (that falls back to the layers below it).

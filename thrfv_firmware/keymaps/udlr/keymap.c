@@ -19,8 +19,7 @@
 #endif
 
 #ifdef ENCODER_ENABLE
-#   include "encoder.h"
-/* #   include "udlr_encoder.h" */
+#   include "udlr_encoder.h"
 #endif
 
 // A 'transparent' key code (that falls back to the layers below it).
@@ -39,7 +38,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
             KC_N, KC_M, KC_COMM, KC_DOT, RSFT_T(KC_SLSH),
 
             KC_LEFT, KC_RIGHT, LT(2,KC_TAB), LALT_T(KC_BSPC), KC_AUDIO_MUTE,
-            LGUI_T(KC_ENT), LALT_T(KC_SPC), KC_NO, KC_DOWN, KC_UP
+            LGUI_T(KC_ENT), LALT_T(KC_SPC), TD(TD_L1), KC_DOWN, KC_UP
 
             ),
 
@@ -47,8 +46,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
             KC_EXLM, KC_AT, KC_HASH, KC_DLR, KC_PERC,
             KC_CIRC, KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN,
 
-            LCTL_T(KC_1), KC_2, KC_3, LGUI_T(KC_4), KC_5,
-            KC_6, LGUI_T(KC_7), KC_8, KC_9, LCTL_T(KC_0),
+            LCTL_T(KC_1), KC_2, KC_3, KC_4, KC_5,
+            KC_6, KC_7, KC_8, KC_9, LCTL_T(KC_0),
 
             KC_LSFT, KC_NO, KC_NO, KC_EQL, LT(3,KC_PLUS),
             KC_UNDS, KC_MINS, ___, ___, ___,
@@ -84,7 +83,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
             KC_MUTE, KC_VOLD, KC_VOLU, KC_NO, KC_RSFT,
 
             ___, ___, TG(2), ___, ___,
-            ___, ___, TG(1), ___, ___
+            ___, ___, ___, ___, ___
 
             ),
 
@@ -122,7 +121,6 @@ bool get_hold_on_other_key_press(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
         // Do not force the mod-tap key press to be handled as a modifier
         // if any other key was pressed while the mod-tap key is held down.
-        case LGUI_T(KC_4): case LGUI_T(KC_7):
         case LGUI_T(KC_Q): case LGUI_T(KC_P):
         case RGUI_T(KC_MINS):
         case LCTL_T(KC_A): case LCTL_T(KC_SCLN):
@@ -142,7 +140,7 @@ bool get_hold_on_other_key_press(uint16_t keycode, keyrecord_t *record) {
 /* per-key permissive setting */
 bool get_permissive_hold(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
-        case KC_NO:
+        case TD(TD_L1):
         case LT(2,KC_TAB):
         /* case LALT_T(KC_BSPC): case LALT_T(KC_SPC): */
         case RSFT_T(KC_SLSH): 

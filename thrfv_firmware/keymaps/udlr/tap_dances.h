@@ -77,7 +77,7 @@ void ql_l1_reset(tap_dance_state_t *state, void *user_data) {
         case TD_DOUBLE_TAP:
             break;
         default:
-            layer_off(layer_state);
+            layer_off(1);
             break;
     }
     ql_tap_state.state = TD_NONE;
