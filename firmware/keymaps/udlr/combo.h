@@ -44,9 +44,15 @@ const uint16_t PROGMEM dtsl_combo[] = {KC_DOT, RSFT_T(KC_SLSH), COMBO_END};
 /* /1* row 2 + 3 *1/ */
 /* const uint16_t PROGMEM mtd1_combo[] = {KC_M, TD(TD_LAYER_1), COMBO_END}; */
 
+/* for layer 1 */
+const uint16_t PROGMEM eini_combo[] = {KC_8, KC_9, COMBO_END};
+
+/* for layer 1 */
+const uint16_t PROGMEM up_right_combo[] = {KC_UP, KC_RIGHT, COMBO_END};
+
 /* for layer 3 */
-const uint16_t PROGMEM ntbs_combo[] = {KC_ENT, KC_BSPC, COMBO_END};
-const uint16_t PROGMEM fvsx_combo[] = {KC_P5, KC_P6, COMBO_END};
+const uint16_t PROGMEM th_fvsx_combo[] = {KC_P5, KC_P6, COMBO_END};
+const uint16_t PROGMEM th_eini_combo[] = {KC_P8, KC_P9, COMBO_END};
 
 /* assign combo task/function */
 combo_t key_combos[] = {
@@ -55,9 +61,15 @@ combo_t key_combos[] = {
   COMBO(sd_combo, KC_CAPS),
   COMBO(kl_combo, KC_ENT),
 
+  /* Commands on layer 1 */
+  COMBO(eini_combo, KC_ENT),
+
+  /* Commands on layer 2 */
+  COMBO(up_right_combo, KC_ENT),
+
   /* Commands on layer 3 */
-  COMBO(fvsx_combo, KC_ENT),
-  COMBO(ntbs_combo, KC_ESC),
+  COMBO(th_eini_combo, KC_ESC),
+  COMBO(th_fvsx_combo, KC_ENT),
 
   /* Symbols */
   COMBO(qw_combo, KC_EQL),

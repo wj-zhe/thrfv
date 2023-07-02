@@ -56,22 +56,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
             ___, ___, TG(1), ___, ___
             ),
 
-    /* // Numpad alike number layer */
-    /* [1] = LAYOUT( */
-    /*         KC_LGUI, KC_EXLM, KC_AT, KC_HASH, KC_NO, */
-    /*         KC_SLSH, KC_7, KC_8, KC_9, RGUI_T(KC_MINS), */
-
-    /*         KC_LCTL, KC_DLR, KC_PERC, KC_CIRC, KC_ESC, */
-    /*         KC_ASTR, KC_4, KC_5, KC_6, RCTL_T(KC_PLUS), */
-
-    /*         LSFT_T(KC_COMM), KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN, */
-    /*         KC_0, KC_1, KC_2, KC_3, RSFT_T(KC_DOT), */
-
-    /*         ___, ___, TO(2), ___, ___, */
-    /*         ___, KC_BSPC, TG(1), ___, ___ */
-
-    /*         ), */
-
     [2] = LAYOUT(
             LGUI_T(KC_F9), KC_F10, KC_F11, KC_F12, KC_PSCR,
             KC_HOME, KC_PGDN, KC_PGUP, KC_END, KC_LGUI,
@@ -107,43 +91,43 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 /* Tapping-term per key */
 uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
-        case LSFT_T(KC_Z): case LSFT_T(KC_F1):
-        case RSFT_T(KC_SLSH):
-        /* case LGUI_T(KC_Q): case LGUI_T(KC_P): */
-            return 135;
+        case LALT_T(KC_BSPC): case LALT_T(KC_SPC):
+        case RSFT_T(KC_SLSH): case LSFT_T(KC_Z): case LSFT_T(KC_F1):
+            return 110;
+        case TD(TD_L1):
+        case LCTL_T(KC_A): case LCTL_T(KC_F5):
+        case LCTL_T(KC_SCLN):
+            return 150;
         default:
             return TAPPING_TERM;
     }
 };
 
-/* per-key ignore mod tap configuration */
-bool get_hold_on_other_key_press(uint16_t keycode, keyrecord_t *record) {
-    switch (keycode) {
-        // Do not force the mod-tap key press to be handled as a modifier
-        // if any other key was pressed while the mod-tap key is held down.
-        case LGUI_T(KC_Q): case LGUI_T(KC_P):
-        case RGUI_T(KC_MINS):
-        case LCTL_T(KC_A): case LCTL_T(KC_SCLN):
-        case RCTL_T(KC_PLUS):
-        case LCTL_T(KC_F5):
-        case LSFT_T(KC_Z):
-        case LSFT_T(KC_COMM): case RSFT_T(KC_DOT):
-        case LSFT_T(KC_F1):
-            return true;
-        // Force the mod-tap key press to be handled as a modifier if any
-        // other key was pressed while the mod-tap key is held down.
-        default:
-            return false;
-    }
-};
+/* /1* per-key ignore mod tap configuration *1/ */
+/* bool get_hold_on_other_key_press(uint16_t keycode, keyrecord_t *record) { */
+/*     switch (keycode) { */
+/*         // Do not force the mod-tap key press to be handled as a modifier */
+/*         // if any other key was pressed while the mod-tap key is held down. */
+/*         case LGUI_T(KC_Q): case LGUI_T(KC_P): */
+/*         case LCTL_T(KC_A): case LCTL_T(KC_SCLN): */
+/*         case LCTL_T(KC_F5): */
+/*         case LSFT_T(KC_Z): */
+/*         case LSFT_T(KC_COMM): case RSFT_T(KC_DOT): */
+/*         case LSFT_T(KC_F1): */
+/*             return true; */
+/*         // Force the mod-tap key press to be handled as a modifier if any */
+/*         // other key was pressed while the mod-tap key is held down. */
+/*         default: */
+/*             return false; */
+/*     } */
+/* }; */
 
 /* per-key permissive setting */
 bool get_permissive_hold(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
-        case TD(TD_L1):
         case LT(2,KC_TAB):
-        /* case LALT_T(KC_BSPC): case LALT_T(KC_SPC): */
-        case RSFT_T(KC_SLSH): 
+        case RSFT_T(KC_SLSH): case LSFT_T(KC_Z): case LSFT_T(KC_F1):
+        case LALT_T(KC_BSPC): case LALT_T(KC_SPC):
             // Immediately select the hold action when another key is tapped.
             return true;
         default:
