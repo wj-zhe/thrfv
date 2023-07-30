@@ -15,11 +15,11 @@
 #endif
 
 #ifdef OLED_ENABLE
-#   include "udlr_oled.h"
+#   include "thrfv_oled.h"
 #endif
 
 #ifdef ENCODER_ENABLE
-#   include "udlr_encoder.h"
+#   include "thrfv_encoder.h"
 #endif
 
 // A 'transparent' key code (that falls back to the layers below it).
@@ -34,11 +34,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
             LCTL_T(KC_A), KC_S, KC_D, KC_F, KC_G,
             KC_H, KC_J, KC_K, KC_L, LCTL_T(KC_SCLN),
 
-            LSFT_T(KC_Z), KC_X, KC_C, KC_V, KC_B,
+            LSFT_T(KC_Z), KC_X, KC_C, KC_V, LT(3,KC_B),
             KC_N, KC_M, KC_COMM, KC_DOT, RSFT_T(KC_SLSH),
 
-            KC_LEFT, KC_RIGHT, LT(2,KC_TAB), LALT_T(KC_BSPC), KC_AUDIO_MUTE,
-            LGUI_T(KC_ENT), LALT_T(KC_SPC), TD(TD_L1), KC_DOWN, KC_UP
+            KC_NO, KC_NO, LT(2,KC_TAB), LALT_T(KC_BSPC), KC_AUDIO_MUTE,
+            KC_BTN1, LALT_T(KC_SPC), TD(TD_L1), KC_NO, KC_NO
 
             ),
 
@@ -53,32 +53,32 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
             KC_UNDS, KC_MINS, ___, ___, ___,
 
             ___, ___, ___, ___, ___,
-            ___, ___, TG(1), ___, ___
+            KC_BTN2, ___, ___, ___, ___
             ),
 
     [2] = LAYOUT(
-            LGUI_T(KC_F9), KC_F10, KC_F11, KC_F12, KC_PSCR,
+            LGUI_T(KC_F9), KC_F10, KC_F11, KC_F12, KC_BTN2,
             KC_HOME, KC_PGDN, KC_PGUP, KC_END, KC_LGUI,
 
-            LCTL_T(KC_F5), KC_F6, KC_F7, KC_F8, KC_NO,
+            LCTL_T(KC_F5), KC_F6, KC_F7, KC_F8, KC_BTN1,
             KC_LEFT, KC_DOWN, KC_UP, KC_RGHT, KC_LCTL,
 
             LSFT_T(KC_F1), KC_F2, KC_F3, KC_F4, TO(3),
             KC_MUTE, KC_VOLD, KC_VOLU, KC_NO, KC_RSFT,
 
-            ___, ___, TG(2), ___, ___,
-            ___, ___, ___, ___, ___
+            ___, ___, TG(2), LALT_T(KC_PSCR), ___,
+            ___, LALT_T(KC_MPLY), TD(TD_MD_NX_PR), ___, ___
 
             ),
 
     [3] = LAYOUT(
-            KC_NO, KC_NO, KC_NO, KC_NO, KC_NUM,
+            KC_NO, KC_HOME, KC_UP, KC_PGUP, KC_NO,
             KC_PSLS, KC_P7, KC_P8, KC_P9, KC_PMNS,
 
-            KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
+            KC_END, KC_LEFT, KC_DOWN, KC_RIGHT, KC_PGDN,
             KC_PAST, KC_P4, KC_P5, KC_P6, KC_PPLS,
 
-            KC_NO, KC_NO, QK_BOOT, KC_NO, TG(3),
+            KC_NO, KC_NO, KC_NO, KC_NO, TG(3),
             KC_P0, KC_P1, KC_P2, KC_P3, KC_DOT,
 
             ___, ___, TO(2), ___, ___,
@@ -91,13 +91,12 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 /* Tapping-term per key */
 uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
-        case LALT_T(KC_BSPC): case LALT_T(KC_SPC):
-        case RSFT_T(KC_SLSH): case LSFT_T(KC_Z): case LSFT_T(KC_F1):
-            return 110;
-        case TD(TD_L1):
-        case LCTL_T(KC_A): case LCTL_T(KC_F5):
-        case LCTL_T(KC_SCLN):
-            return 150;
+        case LALT_T(KC_BSPC):
+        case RSFT_T(KC_SLSH):
+            return 115;
+        case LALT_T(KC_SPC):
+        case LSFT_T(KC_Z): case LSFT_T(KC_F1):
+            return 135;
         default:
             return TAPPING_TERM;
     }
@@ -122,19 +121,19 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
 /*     } */
 /* }; */
 
-/* per-key permissive setting */
-bool get_permissive_hold(uint16_t keycode, keyrecord_t *record) {
-    switch (keycode) {
-        case LT(2,KC_TAB):
-        case RSFT_T(KC_SLSH): case LSFT_T(KC_Z): case LSFT_T(KC_F1):
-        case LALT_T(KC_BSPC): case LALT_T(KC_SPC):
-            // Immediately select the hold action when another key is tapped.
-            return true;
-        default:
-            // Do not select the hold action when another key is tapped.
-            return false;
-    }
-}
+/* /1* per-key permissive setting *1/ */
+/* bool get_permissive_hold(uint16_t keycode, keyrecord_t *record) { */
+/*     switch (keycode) { */
+/*         case LT(2,KC_TAB): */
+/*         case RSFT_T(KC_SLSH): case LSFT_T(KC_Z): case LSFT_T(KC_F1): */
+/*         case LALT_T(KC_BSPC): case LALT_T(KC_SPC): */
+/*             // Immediately select the hold action when another key is tapped. */
+/*             return true; */
+/*         default: */
+/*             // Do not select the hold action when another key is tapped. */
+/*             return false; */
+/*     } */
+/* } */
 
 /* Custom keycode */
 uint8_t mod_state;
