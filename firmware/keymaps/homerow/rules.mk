@@ -39,7 +39,3 @@ MOUSEKEY_ENABLE = yes
 
 # Debug Options
 CONSOLE_ENABLE = no
-
-# Build Options
-NKRO_ENABLE = no           # N-Key Rollover
-
