@@ -23,12 +23,13 @@ COMB(lcbr_combo, KC_LCBR, KC_R, KC_G)
 COMB(rcbr_combo, KC_RCBR, KC_U, KC_H)
 COMB(rbrc_combo, KC_RBRC, KC_I, LCTL_T(KC_J))
 COMB(unds_combo, KC_UNDS, KC_O, KC_K)
-COMB(caps_combo, KC_CAPS, KC_S, KC_D)
+/* COMB(caps_combo, KC_CAPS, KC_S, KC_D) */
 COMB(dquo_combo, KC_DQUO, KC_L, KC_SCLN)
 COMB(tild_combo, KC_TILD, LSFT_T(KC_Z), KC_X)
 COMB(grv_combo, KC_GRV, KC_X, KC_C)
 COMB(bsls_combo, KC_BSLS, KC_COMM, KC_DOT)
 COMB(pipe_combo, KC_PIPE, KC_DOT, RSFT_T(KC_SLSH))
+COMB(td_md_ult_combo, TD(TD_MD_ULT), LALT_T(KC_SPC), TD(TD_L1))
 
 /* Layer 3 */
 COMB(qk_boot_combo, QK_BOOT, KC_END, KC_PPLS)

@@ -5,21 +5,21 @@
 #   include "print.h"
 #endif
 
-#ifdef COMBO_ENABLE
-/* #   include "combo.h" */
-#   include "g/keymap_combo.h"
-#endif
-
-#ifdef TAP_DANCE_ENABLE
-#   include "tap_dances.h"
-#endif
-
 #ifdef ENCODER_ENABLE
 #   include "encoder_cuz.h"
 #endif
 
 #ifdef OLED_ENABLE
 #   include "thrfv_oled.h"
+#endif
+
+#ifdef TAP_DANCE_ENABLE
+#   include "tap_dances.h"
+#endif
+
+#ifdef COMBO_ENABLE
+/* #   include "combo.h" */
+#   include "g/keymap_combo.h"
 #endif
 
 // A 'transparent' key code (that falls back to the layers below it).
